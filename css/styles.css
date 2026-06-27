@@ -1,0 +1,331 @@
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #f5f7fa;
+    color: #222;
+    min-height: 100vh;
+    padding: 30px 15px;
+}
+
+/* =========================
+   APP
+========================= */
+
+.app {
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.logo {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.app-title {
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+.app-subtitle {
+    color: #666;
+    margin-top: 5px;
+    font-weight: 500;
+}
+
+/* =========================
+   CARDS
+========================= */
+
+.card {
+    background: white;
+    border-radius: 20px;
+    padding: 24px;
+    margin-bottom: 20px;
+
+    box-shadow:
+        0 4px 12px rgba(0,0,0,.05),
+        0 1px 2px rgba(0,0,0,.04);
+}
+
+.section-title {
+    margin-bottom: 18px;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #333;
+}
+
+/* =========================
+   STAGE BUTTONS
+========================= */
+
+.stage-selector {
+    display: flex;
+    gap: 15px;
+}
+
+.stage-btn {
+    flex: 1;
+
+    border: none;
+
+    background: #f3f4f6;
+
+    border-radius: 16px;
+
+    padding: 18px;
+
+    cursor: pointer;
+
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    align-items: center;
+    justify-content: center;
+
+    transition: all .25s ease;
+}
+
+.stage-btn:hover {
+    transform: translateY(-2px);
+}
+
+.stage-btn.active {
+    background: #1f8b4c;
+    color: white;
+}
+
+.stage-btn span {
+    font-weight: 600;
+}
+
+/* =========================
+   WEEKS
+========================= */
+
+.weeks-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.week-btn {
+    min-width: 60px;
+
+    border: none;
+
+    background: #f3f4f6;
+
+    padding: 12px 18px;
+
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    font-weight: 700;
+
+    transition: all .25s ease;
+}
+
+.week-btn:hover {
+    transform: translateY(-2px);
+}
+
+.week-btn.active {
+    background: #222;
+    color: white;
+}
+
+/* =========================
+   WATER INPUT
+========================= */
+
+.water-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.water-input {
+    flex: 1;
+
+    border: 2px solid #e5e7eb;
+
+    border-radius: 14px;
+
+    padding: 16px;
+
+    font-size: 1.1rem;
+
+    outline: none;
+
+    transition: .25s;
+}
+
+.water-input:focus {
+    border-color: #1f8b4c;
+}
+
+.water-unit {
+    font-weight: 600;
+    color: #666;
+}
+
+/* =========================
+   RESULTS
+========================= */
+
+.nutrients-container {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+/* =========================
+   NUTRIENT CARD
+========================= */
+
+.nutrient {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.nutrient-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nutrient-name {
+    font-weight: 700;
+}
+
+.nutrient-value {
+    font-weight: 700;
+}
+
+/* =========================
+   PROGRESS BAR
+========================= */
+
+.progress {
+    width: 100%;
+    height: 14px;
+
+    background: #eceff3;
+
+    border-radius: 999px;
+
+    overflow: hidden;
+}
+
+.progress-bar {
+    width: 0%;
+
+    height: 100%;
+
+    border-radius: 999px;
+
+    transition: width .5s ease;
+}
+
+.progress-bar.grow {
+    background: linear-gradient(
+        90deg,
+        #4CAF50,
+        #81C784
+    );
+}
+
+.progress-bar.bloom {
+    background: linear-gradient(
+        90deg,
+        #E53935,
+        #EF5350
+    );
+}
+
+.progress-bar.micro {
+    background: linear-gradient(
+        90deg,
+        #333,
+        #777
+    );
+}
+
+/* =========================
+   MIX ORDER
+========================= */
+
+.mixing-order {
+    padding-left: 20px;
+}
+
+.mixing-order li {
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+    text-align: center;
+    margin-top: 30px;
+    color: #777;
+}
+
+.footer strong {
+    color: #222;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .card {
+        padding: 18px;
+    }
+
+    .stage-selector {
+        flex-direction: column;
+    }
+
+    .water-wrapper {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .water-unit {
+        text-align: center;
+    }
+
+}
