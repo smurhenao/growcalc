@@ -295,3 +295,137 @@ function renderNutrients(data) {
     });
 
 }
+
+/*
+=================================
+INSTALL PROMPT
+=================================
+*/
+
+let deferredPrompt;
+
+const installBanner =
+    document.getElementById("installBanner");
+
+const installBtn =
+    document.getElementById("installBtn");
+
+const closeInstallBanner =
+    document.getElementById("closeInstallBanner");
+
+/*
+=================================
+YA INSTALADA?
+=================================
+*/
+
+const isStandalone =
+    window.matchMedia(
+        "(display-mode: standalone)"
+    ).matches;
+
+if (
+    !isStandalone &&
+    !localStorage.getItem(
+        "installBannerDismissed"
+    )
+) {
+
+    detectIOS();
+
+}
+
+/*
+=================================
+ANDROID / CHROME
+=================================
+*/
+
+window.addEventListener(
+    "beforeinstallprompt",
+    (e) => {
+
+        e.preventDefault();
+
+        deferredPrompt = e;
+
+        installBanner.classList.remove(
+            "hidden"
+        );
+
+    }
+);
+
+installBtn?.addEventListener(
+    "click",
+    async () => {
+
+        if (!deferredPrompt) return;
+
+        deferredPrompt.prompt();
+
+        await deferredPrompt.userChoice;
+
+        deferredPrompt = null;
+
+        installBanner.classList.add(
+            "hidden"
+        );
+
+    }
+);
+
+/*
+=================================
+CERRAR
+=================================
+*/
+
+closeInstallBanner?.addEventListener(
+    "click",
+    () => {
+
+        installBanner.classList.add(
+            "hidden"
+        );
+
+        localStorage.setItem(
+            "installBannerDismissed",
+            "true"
+        );
+
+    }
+);
+
+/*
+=================================
+IPHONE
+=================================
+*/
+
+function detectIOS() {
+
+    const isIOS =
+
+        /iphone|ipad|ipod/i.test(
+            navigator.userAgent
+        );
+
+    if (!isIOS) return;
+
+    installBanner.classList.remove(
+        "hidden"
+    );
+
+    installBtn.style.display = "none";
+
+    installBanner.querySelector(
+        "p"
+    ).innerHTML = `
+        Pulsa Compartir y luego
+        <strong>
+        Añadir a pantalla de inicio
+        </strong>
+    `;
+
+}
