@@ -1,5 +1,52 @@
 import { soulSensei } from "./data.js";
 import { calculateNutrients } from "./calculator.js";
+/*
+=================================
+TEMA
+=================================
+*/
+
+const themeToggle =
+    document.getElementById("themeToggle");
+
+loadTheme();
+
+themeToggle.addEventListener(
+    "click",
+    toggleTheme
+);
+
+function toggleTheme() {
+
+    document.body.classList.toggle("dark");
+
+    const isDark =
+        document.body.classList.contains("dark");
+
+    localStorage.setItem(
+        "theme",
+        isDark ? "dark" : "light"
+    );
+
+    themeToggle.textContent =
+        isDark ? "☀️" : "🌙";
+
+}
+
+function loadTheme() {
+
+    const savedTheme =
+        localStorage.getItem("theme");
+
+    if (savedTheme === "dark") {
+
+        document.body.classList.add("dark");
+
+        themeToggle.textContent = "☀️";
+
+    }
+
+}
 
 let selectedStage = "vegetative";
 let selectedWeek = 1;

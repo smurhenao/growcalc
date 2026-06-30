@@ -1,6 +1,33 @@
 /* =========================
    RESET
 ========================= */
+:root {
+
+    --bg-color: #f5f7fa;
+
+    --card-color: #ffffff;
+
+    --text-color: #222222;
+
+    --secondary-text: #666666;
+
+    --border-color: #e5e7eb;
+
+}
+
+body.dark {
+
+    --bg-color: #121212;
+
+    --card-color: #1e1e1e;
+
+    --text-color: #ffffff;
+
+    --secondary-text: #f3f0f0;
+
+    --border-color: #2f2f2f;
+
+}
 
 * {
     margin: 0;
@@ -15,8 +42,12 @@ input {
 
 body {
     font-family: 'Inter', sans-serif;
-    background: #f5f7fa;
-    color: #222;
+    background: var(--bg-color);
+    color: var(--text-color);
+
+    transition:
+        background .3s ease,
+        color .3s ease;
     min-height: 100vh;
     padding: 30px 15px;
 }
@@ -51,7 +82,7 @@ body {
 }
 
 .app-subtitle {
-    color: #666;
+    color: var(--secondary-text);
     margin-top: 5px;
     font-weight: 500;
 }
@@ -61,7 +92,10 @@ body {
 ========================= */
 
 .card {
-    background: white;
+    background: var(--card-color);
+
+    transition:
+        background .3s ease;
     border-radius: 20px;
     padding: 24px;
     margin-bottom: 20px;
@@ -75,7 +109,7 @@ body {
     margin-bottom: 18px;
     font-size: 1rem;
     font-weight: 700;
-    color: #333;
+    
 }
 
 /* =========================
@@ -173,7 +207,11 @@ body {
 .water-input {
     flex: 1;
 
-    border: 2px solid #e5e7eb;
+    border: 2px solid var(--border-color);
+
+    background: var(--card-color);
+
+    color: var(--text-color);
 
     border-radius: 14px;
 
@@ -327,5 +365,49 @@ body {
     .water-unit {
         text-align: center;
     }
+
+}
+/* =========================
+   THEME TOGGLE
+========================= */
+
+.header {
+    position: relative;
+}
+
+.theme-toggle {
+
+    position: absolute;
+
+    right: 0;
+
+    top: 0;
+
+    width: 50px;
+
+    height: 50px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    font-size: 1.3rem;
+
+    background: var(--card-color);
+
+    color: var(--text-color);
+
+    box-shadow:
+        0 4px 12px rgba(0,0,0,.08);
+
+    transition: .3s;
+
+}
+
+.theme-toggle:hover {
+
+    transform: rotate(15deg);
 
 }
