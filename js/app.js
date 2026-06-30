@@ -270,6 +270,28 @@ function renderNutrients(data) {
             nutrient
         );
 
+
+        if ("serviceWorker" in navigator) {
+
+  window.addEventListener("load", () => {
+
+    navigator.serviceWorker
+      .register("/service-worker.js")
+      .then(() => {
+
+        console.log("GrowCalc PWA lista 🚀");
+
+      })
+      .catch(error => {
+
+        console.error(error);
+
+      });
+
+  });
+
+}
+
     });
 
 }
