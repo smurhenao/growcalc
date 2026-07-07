@@ -329,6 +329,14 @@ body {
     font-weight: 500;
 }
 
+.mixing-note{
+    margin-top:12px;
+    font-size:.8rem;
+    color:var(--text-light);
+    text-align:center;
+    opacity:.7;
+}
+
 /* =========================
    FOOTER
 ========================= */

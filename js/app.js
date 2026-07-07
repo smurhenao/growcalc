@@ -202,6 +202,12 @@ function renderNutrients(data) {
 
     const nutrients = [
 
+         {
+            id: "micro",
+            label: "Micro",
+            className: "micro"
+        },
+        
         {
             id: "grow",
             label: "Grow",
@@ -212,21 +218,18 @@ function renderNutrients(data) {
             id: "bloom",
             label: "Bloom",
             className: "bloom"
-        },
-
-        {
-            id: "micro",
-            label: "Micro",
-            className: "micro"
         }
+
+       
 
     ];
 
     const maxValue =
         Math.max(
+            data.micro,
             data.grow,
             data.bloom,
-            data.micro,
+            
             1
         );
 
