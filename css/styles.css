@@ -295,8 +295,8 @@ body {
 .progress-bar.grow {
     background: linear-gradient(
         90deg,
-        #4CAF50,
-        #81C784
+        #33b337,
+        #50c056
     );
 }
 
@@ -304,15 +304,15 @@ body {
     background: linear-gradient(
         90deg,
         #E53935,
-        #EF5350
+        #f84c49
     );
 }
 
 .progress-bar.micro {
     background: linear-gradient(
         90deg,
-        #333,
-        #777
+        #5f0606,
+        #791717
     );
 }
 
@@ -340,7 +340,7 @@ body {
 }
 
 .footer strong {
-    color: #222;
+    color: #414040;
 }
 
 /* =========================
