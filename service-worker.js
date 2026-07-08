@@ -1,4 +1,4 @@
-const CACHE_NAME = "growcalc-v3";
+const CACHE_NAME = "growcalc-v3.0.1";
 
 const urlsToCache = [
   "/",

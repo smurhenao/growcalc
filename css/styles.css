@@ -289,7 +289,7 @@ body {
 
     border-radius: 999px;
 
-    transition: width .5s ease;
+    transition: width 1.5s ease;
 }
 
 .progress-bar.grow {

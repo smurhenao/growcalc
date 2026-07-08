@@ -263,7 +263,7 @@ function renderNutrients(data) {
 
                 <div
                     class="progress-bar ${item.className}"
-                    style="width:${percentage}%">
+                    style="width:0%">
                 </div>
 
             </div>
@@ -273,8 +273,24 @@ function renderNutrients(data) {
             nutrient
         );
 
+        const bar =
+            nutrient.querySelector(".progress-bar");
 
-        if ("serviceWorker" in navigator) {
+        setTimeout(() => {
+
+            bar.style.width =
+             `${percentage}%`;
+
+        }, 50);
+
+
+        
+
+    });
+
+}
+
+if ("serviceWorker" in navigator) {
 
   window.addEventListener("load", () => {
 
@@ -294,11 +310,6 @@ function renderNutrients(data) {
   });
 
 }
-
-    });
-
-}
-
 /*
 =================================
 INSTALL PROMPT

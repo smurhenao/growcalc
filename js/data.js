@@ -38,7 +38,7 @@ export const soulSensei = {
                 nutrients: {
                     grow: 8,
                     bloom: 6,
-                    micro: 8
+                    micro: 8.5
                 }
             }
 
@@ -69,7 +69,7 @@ export const soulSensei = {
                 nutrients: {
                     grow: 6.5,
                     bloom: 9.5,
-                    micro: 7.5
+                    micro: 6.5
                 }
             },
 
