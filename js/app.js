@@ -437,7 +437,7 @@ function detectIOS() {
         "p"
     ).innerHTML = `
         Pulsa ⋮, luego <strong>Compartir</strong> y después
-        <strong>Añadir a pantalla de inicio</strong>
+        <strong>Agregar a inicio</strong>
     `;
 
 }
