@@ -436,10 +436,8 @@ function detectIOS() {
     installBanner.querySelector(
         "p"
     ).innerHTML = `
-        Pulsa Compartir y luego
-        <strong>
-        Añadir a pantalla de inicio
-        </strong>
+        Pulsa ⋮, luego <strong>Compartir</strong> y después
+        <strong>Añadir a pantalla de inicio</strong>
     `;
 
 }
