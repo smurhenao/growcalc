@@ -1,22 +1,31 @@
 {
-  "name": "GrowCalc",
+  "name": "GrowCalc • Soul Sensei Calculator",
   "short_name": "GrowCalc",
-  "description": "Calculadora de nutrientes Soul Sensei",
-  "start_url": "/",
+  "description": "Calculadora de precisión de nutrientes Soul Sensei (Micro, Grow, Bloom) para fertirriego.",
+  "start_url": "./",
+  "scope": "./",
   "display": "standalone",
-  "background_color": "#121212",
-  "theme_color": "#1f8b4c",
+  "background_color": "#080B09",
+  "theme_color": "#080B09",
   "orientation": "portrait",
   "icons": [
     {
-      "src": "icons/icon-192.png",
-      "sizes": "192x192",
-      "type": "image/png"
+      "src": "./icons/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
     },
     {
-      "src": "icons/icon-512.png",
+      "src": "./icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./icons/icon-512.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ]
 }

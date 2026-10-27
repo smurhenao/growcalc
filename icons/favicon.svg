@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none">
+  <rect width="128" height="128" rx="28" fill="#080B09"/>
+  <circle cx="64" cy="64" r="48" stroke="url(#ensoGrad)" stroke-width="5" stroke-linecap="round" stroke-dasharray="250 60"/>
+  <!-- Three-leaf Soul Sensei Emblem -->
+  <path d="M64 24C64 24 47 47 47 68C47 81 55 91 64 96C73 91 81 81 81 68C81 47 64 24 64 24Z" fill="url(#leafMain)"/>
+  <path d="M60 96C44 93 26 80 24 58C39 59 53 71 60 96Z" fill="url(#leafSide)"/>
+  <path d="M68 96C84 93 102 80 104 58C89 59 75 71 68 96Z" fill="url(#leafSide)"/>
+  <path d="M64 38V92" stroke="#080B09" stroke-width="2.5" stroke-linecap="round" stroke-opacity="0.45"/>
+  <defs>
+    <linearGradient id="ensoGrad" x1="16" y1="16" x2="112" y2="112" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#B4FF4E"/>
+      <stop offset="0.6" stop-color="#8DF82C"/>
+      <stop offset="1" stop-color="#1F8B4C" stop-opacity="0.2"/>
+    </linearGradient>
+    <linearGradient id="leafMain" x1="64" y1="24" x2="64" y2="96" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#B4FF4E"/>
+      <stop offset="1" stop-color="#4ADE80"/>
+    </linearGradient>
+    <linearGradient id="leafSide" x1="24" y1="58" x2="104" y2="96" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#8DF82C"/>
+      <stop offset="1" stop-color="#1F8B4C"/>
+    </linearGradient>
+  </defs>
+</svg>
