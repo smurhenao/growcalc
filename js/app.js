@@ -315,7 +315,7 @@ function syncUnitUI() {
 function renderWaterPresets() {
     waterPresetsContainer.replaceChildren();
     const presets = WATER_PRESETS[selectedUnit] || WATER_PRESETS.liters;
-    const currentInputVal = parseFloat(waterInput.value) || 0;
+    const currentInputVal = sanitizeWaterAmount(waterInput.value);
     const suffix = selectedUnit === "liters" ? "L" : "Gal";
 
     presets.forEach((amount) => {
@@ -340,8 +340,28 @@ function renderWaterPresets() {
    ACTUALIZACIÓN DE CÁLCULOS Y RESULTADOS
    ========================================================================== */
 
+/**
+ * Normaliza la entrada en tiempo real para permitir tanto coma (,) como punto (.)
+ * en iOS Safari / Android sin borrar el separador mientras el usuario escribe.
+ */
+function normalizeDecimalString(raw) {
+    const cleaned = String(raw).replace(/[^0-9.,]/g, "");
+    const match = cleaned.match(/^(\d*)([.,]?)(\d*)/);
+    if (!match) return "";
+    const [, intPart, sep, decPart] = match;
+    if (intPart === "" && sep) {
+        return `0${sep}${decPart}`;
+    }
+    return `${intPart}${sep}${decPart}`;
+}
+
 function handleWaterInputChange() {
-    const rawValue = sanitizeWaterAmount(waterInput.value);
+    const normalized = normalizeDecimalString(waterInput.value);
+    if (waterInput.value !== normalized) {
+        waterInput.value = normalized;
+    }
+
+    const rawValue = sanitizeWaterAmount(normalized);
     waterLiters =
         selectedUnit === "liters" ? rawValue : gallonsToLiters(rawValue);
 
@@ -584,7 +604,7 @@ unitButtons.forEach((button) => {
 waterInput?.addEventListener("input", handleWaterInputChange);
 
 waterDecBtn?.addEventListener("click", () => {
-    const current = parseFloat(waterInput.value) || 0;
+    const current = sanitizeWaterAmount(waterInput.value);
     const step = selectedUnit === "liters" ? 1 : 0.5;
     const next = Math.max(0, Number((current - step).toFixed(2)));
     waterInput.value = String(next);
@@ -592,7 +612,7 @@ waterDecBtn?.addEventListener("click", () => {
 });
 
 waterIncBtn?.addEventListener("click", () => {
-    const current = parseFloat(waterInput.value) || 0;
+    const current = sanitizeWaterAmount(waterInput.value);
     const step = selectedUnit === "liters" ? 1 : 0.5;
     const next = Math.min(100000, Number((current + step).toFixed(2)));
     waterInput.value = String(next);
